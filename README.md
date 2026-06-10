@@ -12,6 +12,28 @@ The application implements a premium, modern, light-themed glassmorphism interfa
 
 ---
 
+## 🛠️ Technology Stack
+The application is built using a modern, lightweight, and scalable full-stack ecosystem:
+
+* **Frontend Client**:
+  * **React.js (v19)**: Main interface component library.
+  * **Vite**: High-performance dev server and compiler with Hot Module Replacement (HMR).
+  * **Axios**: HTTP client for requesting data from CRM server endpoints.
+  * **Vanilla CSS**: Premium light-themed layouts built using custom CSS tokens, modern glassmorphic card overlays, responsive flex/grid wrappers, and live statistics charts.
+* **CRM Backend**:
+  * **Node.js**: Javascript server-side runtime environment.
+  * **Express.js (v4)**: REST API server gateway managing router endpoints and CORS policies.
+  * **Google Generative AI SDK (`@google/generative-ai`)**: Integrating Google Gemini-1.5-Flash models for Natural Language query translation, copywriting drafts, and analytics.
+* **Database Layer**:
+  * **MongoDB Atlas & Mongoose (ODM)**: Standard schema modeling and data persistence.
+  * **Local JSON DB Fallback**: A custom-built query evaluator mapping MongoDB filters (`$gt`, `$lt`, `$in`, `$regex`) directly to local file storage.
+* **Tooling & Orchestration**:
+  * **Concurrently**: Manages multiple server processes in a single terminal tab.
+  * **Nodemon**: Automatically restarts Node servers on file changes.
+  * **Python Subprocesses**: Runs integration flow telemetry validation tests (`test_flow.py`).
+
+---
+
 ## 🏗️ Core Architecture Overview
 
 XCRM is designed as a modular monorepo containing three core services:
