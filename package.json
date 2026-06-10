@@ -1,0 +1,16 @@
+{
+  "name": "xeno-crm-monorepo",
+  "version": "1.0.0",
+  "description": "Root workspace for Xeno SDE SDE Internship Assignment",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix channel-service && npm install --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:channel": "npm run dev --prefix channel-service",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start:all": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix channel-service\" \"npm run dev --prefix frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

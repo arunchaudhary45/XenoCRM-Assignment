@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "mock_db.json",
+    "*.log"
+  ]
+}
