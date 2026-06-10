@@ -10,6 +10,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const CHANNEL_SERVICE_URL = process.env.CHANNEL_SERVICE_URL || 'http://localhost:6000';
+const CRM_BACKEND_URL = process.env.CRM_BACKEND_URL || `http://localhost:${PORT}`;
 
 app.use(cors());
 app.use(express.json());
@@ -373,7 +374,7 @@ app.post('/api/campaigns/:id/send', async (req, res) => {
             logId: log._id,
             recipient,
             message: personalizedMsg,
-            callbackUrl: `http://localhost:${PORT}/api/campaigns/webhook`
+            callbackUrl: `${CRM_BACKEND_URL}/api/campaigns/webhook`
           });
         } catch (err) {
           console.error(`[CRM Backend Send] Error processing customer ${customer._id}:`, err.message);
@@ -430,7 +431,7 @@ app.post('/api/campaigns/:id/retry-failed', async (req, res) => {
             logId: log._id,
             recipient: log.recipient,
             message: log.message,
-            callbackUrl: `http://localhost:${PORT}/api/campaigns/webhook`
+            callbackUrl: `${CRM_BACKEND_URL}/api/campaigns/webhook`
           });
         } catch (err) {
           console.error(`[CRM Backend Retry] Failed to retry log ${log._id}:`, err.message);

@@ -195,3 +195,10 @@ python test_flow.py
 - [x] Simulates delayed webhook updates (`Delivered` ➔ `Read` ➔ `Opened` ➔ `Clicked`).
 - [x] Triggers the campaign retry endpoint on failed dispatches.
 - [x] Shuts down child server processes cleanly.
+
+---
+
+## 🌐 Production Cloud Deployment
+
+For detailed, step-by-step instructions on deploying the frontend to **Vercel** and the backend and channel service simulator to **Render**, please see the **[Deployment Guide](file:///C:/Users/arunc/OneDrive/Desktop/XCRM/DEPLOYMENT.md)**.
+
